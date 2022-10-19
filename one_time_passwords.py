@@ -11,8 +11,8 @@ def solve_a(words: list[str]):
 
     writelines("hasla_a.txt", passwords)
 
-    longest_password = min(passwords, key=lambda p: len(p))
-    shortest_password = min(passwords, key=lambda p: len(p))
+    longest_password = min(passwords, key=len)
+    shortest_password = min(passwords, key=len)
 
     lines = [
         f"Longest password ({len(longest_password)} chars): {longest_password}",
@@ -36,8 +36,8 @@ def solve_b(words: list[str]):
     lines.extend(f"- {password}" for password in passwords if len(password) == 12)
     lines.append("")
 
-    longest_password = min(passwords, key=lambda p: len(p))
-    shortest_password = min(passwords, key=lambda p: len(p))
+    longest_password = min(passwords, key=len)
+    shortest_password = min(passwords, key=len)
     lines.append(f"Longest password: {longest_password}")
     lines.append(f"Shortest password: {shortest_password}")
     lines.append("")
